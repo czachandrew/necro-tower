@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxwxi0chboay5"]
+
+[ext_resource type="Texture2D" uid="uid://022ekrya6cgp" path="res://assets/enemies/orc/orc.png" id="1_fv4rw"]
+
+[node name="DummyEnemy" type="PathFollow2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fv4rw")

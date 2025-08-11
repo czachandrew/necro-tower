@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bru3nlvp13fr3"]
+
+[ext_resource type="Texture2D" uid="uid://tuqm4m7qj6gu" path="res://assets/towers/Tower.png" id="1_7itwv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kl3vk"]
+
+[node name="Tower" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7itwv")
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+scale = Vector2(28.53, 28.53)
+shape = SubResource("CircleShape2D_kl3vk")
+
+[node name="FireRateTimer" type="Timer" parent="."]

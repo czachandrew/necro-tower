@@ -1,6 +1,6 @@
-[gd_scene load_steps=66 format=3 uid="uid://mn37j558foew"]
+[gd_scene load_steps=67 format=3 uid="uid://mn37j558foew"]
 
-[ext_resource type="Script" uid="uid://rvknmthkly2g" path="res://scenes/enemy.gd" id="1_82o86"]
+[ext_resource type="Script" uid="uid://rvknmthkly2g" path="res://scripts/enemy.gd" id="1_82o86"]
 [ext_resource type="Texture2D" uid="uid://7a73q0lifdn6" path="res://assets/enemies/orc/D_Attack.png" id="2_1gqeq"]
 [ext_resource type="Texture2D" uid="uid://drrfsnb4e622o" path="res://assets/enemies/orc/D_Death.png" id="3_isvm2"]
 [ext_resource type="Texture2D" uid="uid://duogi35admmte" path="res://assets/enemies/orc/D_Walk.png" id="4_gr8dl"]
@@ -340,7 +340,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ay3m4")
 }],
-"loop": true,
+"loop": false,
 "name": &"s_death",
 "speed": 5.0
 }, {
@@ -437,9 +437,19 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82o86"]
+size = Vector2(27, 28)
+
 [node name="Enemy" type="PathFollow2D"]
+loop = false
 script = ExtResource("1_82o86")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pnjx2")
-animation = &"u_death"
+animation = &"s_death"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_82o86")
