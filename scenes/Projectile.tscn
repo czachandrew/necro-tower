@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw3jqm6bpxvpq"]
+
+[ext_resource type="Script" uid="uid://r4iwgd02a3ci" path="res://scripts/projectile.gd" id="1_vihyi"]
+[ext_resource type="Texture2D" uid="uid://basag7lxajtcm" path="res://assets/projectiles/carrot.png" id="2_kdm4f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_13obt"]
+
+[node name="Projectile" type="Area2D"]
+script = ExtResource("1_vihyi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_13obt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_kdm4f")

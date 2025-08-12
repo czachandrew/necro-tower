@@ -19,6 +19,7 @@ func _ready() -> void:
 	hp = max_hp
 	spr.flip_h = true
 	spr.play("s_walk")
+	hurtbox.add_to_group("enemy_hurtbox")
 	if not hurtbox.input_event.is_connected(_on_hurtbox_input_event):
 		hurtbox.input_event.connect(_on_hurtbox_input_event)
 	print("Enemy ready: ", get_instance_id(), " path=", get_path())

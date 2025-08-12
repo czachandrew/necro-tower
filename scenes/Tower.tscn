@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bru3nlvp13fr3"]
+[gd_scene load_steps=5 format=3 uid="uid://bru3nlvp13fr3"]
 
 [ext_resource type="Texture2D" uid="uid://tuqm4m7qj6gu" path="res://assets/towers/Tower.png" id="1_7itwv"]
+[ext_resource type="Script" uid="uid://cqs1gsgpanvh3" path="res://scripts/tower.gd" id="1_kl3vk"]
+[ext_resource type="PackedScene" uid="uid://bw3jqm6bpxvpq" path="res://scenes/Projectile.tscn" id="2_02lgm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kl3vk"]
 
 [node name="Tower" type="Node2D"]
+script = ExtResource("1_kl3vk")
+projectile_scene = ExtResource("2_02lgm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_7itwv")
